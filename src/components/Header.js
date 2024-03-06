@@ -11,7 +11,7 @@ function Header() {
     <div className="grid  grid-flow-col p-2 m-1 shadow-lg">
       <div className="flex col-span-1">
         <img
-          className="w-8 m-2"
+          className="w-8 m-2 cursor-pointer"
           onClick={() => {
             toggleMenuHandler();
           }}
@@ -24,10 +24,10 @@ function Header() {
       </div>
       <div className="m-2 col-span-10 text-center">
         <input
-          className="border border-black rounded-l-full px-2 py-1 w-96 "
+          className="border border-black rounded-l-full px-2 py-1 w-8/12 "
           type="text"
         />
-        <button className="border  border-black rounded-r-full px-2 py-1">
+        <button className="border  border-black rounded-r-full px-6 py-1">
           🔍
         </button>
       </div>
