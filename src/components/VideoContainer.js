@@ -13,14 +13,16 @@ function VideoContainer() {
   const fetchYouTubeApi = async () => {
     const fetchData = await fetch(API_YOUTUBE);
     const json = await fetchData.json();
-    // console.log(json.items[0].snippet.title);
     setvideos(json.items);
-
   };
   return (
     <div className="flex flex-wrap">
-      {videos.map((video) => {
-        return <Link to={"/watch?v="+ video.id}  ><VideoCard info={video} /></Link>;
+      {videos.map((video, i) => {
+        return (
+          <Link key={i} to={"/watch?v=" + video.id}>
+            <VideoCard info={video} />
+          </Link>
+        );
       })}
     </div>
   );
