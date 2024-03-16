@@ -6,6 +6,7 @@ import { YOUTUBE_VIDEO_INFO_API } from "../utils/constants";
 import { Key } from "react";
 import VideoInfo from "./VideoInfo";
 import CommentContainer from "./CommentContainer";
+import LiveChat from "./LiveChat";
 
 function WatchPage() {
   const [searchParam] = useSearchParams();
@@ -25,26 +26,34 @@ function WatchPage() {
       "https://www.googleapis.com/youtube/v3/videos?part=snippet&id=" +
         searchParam.get("v") +
         "&key=" +
-        "AIzaSyDKIwSlClI2p1yBUuQS8xD6yPe79cTDVYQ"
+        "AIzaSyCQtuWvJPC-DppAacfpqbS1MA-ixHFVW24"
     );
     const json = await data.json();
-    console.log(json.items[0].snippet.title);
+    //console.log(json.items[0].snippet.title);
     setVideoInfo(json?.items[0]);
   };
 
   return (
     <div className="p-2 m-2 ">
-      <div className="">
-        <iframe
-          className="rounded-lg"
-          width="800"
-          height="400"
-          src={"https://www.youtube.com/embed/" + searchParam.get("v")}
-          title="YouTube video player"
-          allowFullScreen
-        ></iframe>
+      <div className="flex ">
+        <div className="w-8/12">
+          <iframe
+            className="rounded-lg"
+            width="800"
+            height="400"
+            src={"https://www.youtube.com/embed/" + searchParam.get("v")}
+            title="YouTube video player"
+            allowFullScreen
+          ></iframe>
+          <div className="my-2">
+            <VideoInfo video={videInfo} />
+          </div>
+        </div>
+        <div className="">
+          <LiveChat />
+        </div>
       </div>
-      <div className=""><VideoInfo video={videInfo} /></div>
+
       <div className="">
         <CommentContainer />
       </div>
