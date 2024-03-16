@@ -32,24 +32,20 @@ function LiveChat() {
 
   return (
     <div className="">
-      <div className="w-[440px] h-[440px] rounded-lg bg-slate-200 shadow-lg p-2 border border-black overflow-y-scroll flex flex-col-reverse">
+      <div className="w-[440px] h-[440px] rounded-lg bg-slate-200 shadow-lg p-2  overflow-y-scroll flex flex-col-reverse">
         {chatMessages.map((c) => {
           return <MsgLive name={c.name} msg={c.msg} />;
         })}
       </div>
 
-      <div className="w-[440px] h-[40px] rounded-lg p-2 bg-slate-200 my-2 border border-black flex items-center">
+      <div className="w-[440px] h-[40px] rounded-lg p-2 bg-slate-200 my-2  flex items-center">
         <span className=""></span>
-        
-        {(e) => {
-          e.preventDefault();
-        }}
         <input
           value={inputMsg}
           onChange={(e) => {
             setInputMsg(e.target.value);
           }}
-          className="border border-black rounded-lg w-8/12 p-1"
+          className=" rounded-lg w-8/12 p-1"
           placeholder="Write Here"
         />
         <button
@@ -61,7 +57,6 @@ function LiveChat() {
                 msg: inputMsg,
               })
             );
-            
           }}
         >
           Submit{" "}

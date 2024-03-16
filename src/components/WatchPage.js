@@ -45,7 +45,7 @@ function WatchPage() {
             title="YouTube video player"
             allowFullScreen
           ></iframe>
-          <div className="my-2">
+          <div className="">
             <VideoInfo video={videInfo} />
           </div>
         </div>

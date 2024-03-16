@@ -37,7 +37,7 @@ const CommentList = ({ comments }) => {
 
 function CommentContainer() {
   return (
-    <div className="w-[800px] bg-slate-200 rounded-lg shadow-lg my-3">
+    <div className="w-[800px] bg-slate-200 rounded-lg shadow-lg my-1">
       <h1 className="text-lg px-2 font-bold">Comments</h1>
       <div className="">
         <CommentList comments={commentData} />
